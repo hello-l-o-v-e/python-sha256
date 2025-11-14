@@ -7,3 +7,4 @@
 - Python程序的打包 | 在Windows系统打包一个Python程序 https://www.youtube.com/watch?v=-J42mFq-PXk
 - Python程序的打包 | 在Mac系统打包一个Python程序 https://www.youtube.com/watch?v=-yI5_3KbzWo
 # python-sha256
+# python-sha256
