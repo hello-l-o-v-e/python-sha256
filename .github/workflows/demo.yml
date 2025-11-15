@@ -1,48 +1,48 @@
-    name: pyinstaller
-    on: workflow_dispatch
-    
-    jobs:
-      build-on-windows:
-        runs-on: windows-2022
-        steps:
-          - name: checkout code
-            uses: actions/checkout@v3
-          - name: install pyinstaller
-            run: pip install pyinstaller
-          - name: build exe
-            run: pyinstaller sha256.py -F
-          - name: upload exe file
-            uses: actions/upload-artifact@v4
-            with:
-              name: sha256-windows-exe
-              path: dist/sha256.exe
-    
-      build-on-linux:
-        runs-on: ubuntu-22.04
-        steps:
-          - name: checkout code
-            uses: actions/checkout@v3
-          - name: install pyinstaller
-            run: pip install pyinstaller
-          - name: build binary
-            run: pyinstaller sha256.py -F
-          - name: upload binary file
-            uses: actions/upload-artifact@v4
-            with:
-              name: sha256-linux
-              path: dist/sha256
-    
-      build-on-mac:
-        runs-on: macos-12
-        steps:
-          - name: checkout code
-            uses: actions/checkout@v3
-          - name: install pyinstaller
-            run: pip install pyinstaller
-          - name: build binary
-            run: pyinstaller sha256.py -F
-          - name: upload binary file
-            uses: actions/upload-artifact@v4
-            with:
-              name: sha256-mac
-              path: dist/sha256
+name: pyinstaller
+on: workflow_dispatch
+
+jobs:
+  build-on-windows:
+    runs-on: windows-2022
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: install pyinstaller
+        run: pip install pyinstaller
+      - name: build exe
+        run: pyinstaller sha256.py -F
+      - name: upload exe file
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-windows-exe
+          path: dist/sha256.exe
+
+  build-on-linux:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: install pyinstaller
+        run: pip install pyinstaller
+      - name: build binary
+        run: pyinstaller sha256.py -F
+      - name: upload binary file
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-linux
+          path: dist/sha256
+
+  build-on-mac:
+    runs-on: macos-13
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+      - name: install pyinstaller
+        run: pip install pyinstaller
+      - name: build binary
+        run: pyinstaller sha256.py -F
+      - name: upload binary file
+        uses: actions/upload-artifact@v4
+        with:
+          name: sha256-mac
+          path: dist/sha256
