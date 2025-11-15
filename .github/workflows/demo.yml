@@ -59,7 +59,7 @@ test-build-windows:
         ls
         ./sha256.exe sha256.exe
 
-test-build-linx:
+test-build-linux:
   runs-on: ubuntu-22.04
   needs: build-on-linux
   steps:
