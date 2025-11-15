@@ -32,7 +32,7 @@ jobs:
           name: sha256-linux
           path: dist/sha256
   build-on-mac:
-	runs-on: macos-13
+	runs-on: macos-12
 	steps:
 	  - name: checkout code
 	    uses: actions/checkout@v3
